@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //serve the index.html file
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/public/indexCB.html");
 });
 
 app.get("/login", (req, res) => {
