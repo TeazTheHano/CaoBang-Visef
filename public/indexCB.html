@@ -48,10 +48,12 @@
     <!-- main -->
     <div class="tab-content">
       <div id="tab1" class="tab-pane active">
-        <div id="banner">img or slide banner here</div>
+        <!-- <div id="banner">
+          <img style="width: 100%; height: 100%; object-fit: cover; object-position: top; margin: 0;" src="./pic1.jpg" alt="">
+        </div> -->
         <div id="main">
           <div id="contents">
-            <h2>Thông tin Y khoa</h2>
+            <h2 style="margin-bottom: 2vw">Thông tin Y khoa</h2>
             <div id="postNav">
               <div id="postNavBackground"></div>
               <div id="postNavExit">
@@ -69,7 +71,7 @@
                 WHO cảnh báo thực trạng đáng lo ngại về an toàn người bệnh
               </h3>
               <div class="postContents">
-                <p class="abstract" style="font-weight: bold">
+                <p class="abstract">
                   SKĐS - Nhân dịp lần đầu tiên phát động chiến dịch “Ngày An
                   toàn người bệnh thế giới 17/09/2019”, Tổ chức Y tế Thế giới
                   (WHO) công bố 10 con số về các tai biến và sự cố trong chăm
@@ -295,11 +297,84 @@
                 <p>trích: Báo Sức khoẻ và Đời Sống</p>
               </div>
             </div>
+            <div class="post">
+              <a
+                href="https://apps.who.int/iris/bitstream/handle/10665/44405/9789243548050-health-vie.pdf?sequence=277&isAllowed=y"
+              >
+                <div class="postThumb">
+                  <img
+                    src="https://kcb.vn/upload/2005611/20210723/df796f6b7a8883d0db8cdfe762ae6baetai-lieu-phuc-hoi-chuc-nang-dua-vao-cong-dong-4003.jpg"
+                    alt=""
+                  />
+                </div>
+                <h3 class="postTitle">
+                  Tài liệu hướng dẫn phục hồi chưc năng của WHO
+                </h3>
+                <div class="postContents">
+                  <p class="abstract">
+                    Quyền có sức khỏe và không có sự phân biệt đối xử được đề
+                    cập trong nhiều các tài liệu quốc tế. Hiến chương của tổ
+                    chức y tế thế giới cũng đã chỉ rõ “ Sự thoải mái về điều
+                    kiện sức khỏe tốt nhất là một trong các quyền cơ bản của con
+                    người trong đó không có sự phân biệt về chủng tộc, tôn giáo,
+                    niềm tin chính trị, các điều kiện kinh tế và xã hội"
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="post">
+              <a
+                href="https://ecall.com.vn/may-truyen-dich-tu-dong-la-gi-cach-su-dung-may-truyen-dich/"
+              >
+                <div class="postThumb">
+                  <img
+                    src="https://i.ytimg.com/vi/MsnjkwmQxhY/maxresdefault.jpg"
+                    alt=""
+                  />
+                </div>
+                <h3 class="postTitle">
+                  Máy truyền dịch tự động là gì? Cách sử dụng máy truyền dịch
+                </h3></a
+              >
+            </div>
+            <div class="post">
+              <a
+                href="https://www.unicef.org/vietnam/media/1481/file/Training%20resources%20on%20social%20work.pdf"
+              >
+                <div class="postThumb">
+                  <img
+                    src="https://cdcangiang.vn/wp-content/uploads/2020/06/Bia-tai-lieu-CSSKCD.jpg"
+                    alt=""
+                  />
+                </div>
+                <h3 class="postTitle">
+                  TÀI LIỆU HƯỚNG DẪN THỰC HÀNH (Dành cho cán bộ xã hội cấp cơ
+                  sở) Chăm sóc sức khoẻ cộng đồng
+                </h3></a
+              >
+            </div>
+            <div class="post">
+              <a
+                href="https://bvtwhue.com.vn/upload/files/6_Q4_T%E1%BA%ADp-2_T%C3%A0i-li%E1%BB%87u-%C4%91%C3%A0o-t%E1%BA%A1o-THLS-cho-%C4%91i%E1%BB%81u-d%C6%B0%E1%BB%A1ng-vi%C3%AAn-m%E1%BB%9Bi_0430_0504_2.pdf"
+              >
+                <div class="postThumb">
+                  <img
+                    src="https://suckhoedoisong.qltns.mediacdn.vn/Images/phamhiep/2019/04/08/truyen-dich-2.jpg"
+                    alt=""
+                  />
+                </div>
+                <h3 class="postTitle">Kĩ thuật truyền dịch, truyền máu</h3>
+              </a>
+            </div>
             <!-- <div class="post">
-
+              <div class="postThumb">
+                <img src="" alt="">
+              </div>
+              <h3 class="postTitle"></h3>
+              <div class="postContents"></div>
             </div> -->
           </div>
-          <div class="loginTab" style="height: inherit">
+          <div class="loginTab" style="height: inherit; margin-top: 4.5vw">
             <h2>Đăng nhập</h2>
             <form action="/login" method="POST">
               <div class="input">
@@ -629,8 +704,8 @@
               <div>
                 <input
                   type="number"
-                  id="newPhoneNumber"
-                  name="newPhoneNumber"
+                  id="phone1"
+                  name="phone1"
                   placeholder="Nhập số muốn thay thế"
                 />
                 <button

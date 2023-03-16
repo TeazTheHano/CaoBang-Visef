@@ -18,7 +18,7 @@ body {
 :root {
   --normalBackground: #dddddd;
 }
-a {
+.post, a {
   cursor: pointer;
   text-decoration: none;
 }
@@ -138,7 +138,6 @@ nav li a:hover {
 
 #contents {
   width: 65%;
-  background-color: gray;
   border-radius: 0.5vw;
 }
 
@@ -154,7 +153,7 @@ nav li a:hover {
 [title="nowActive"] #postNavBackground {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   left: 0;
   top: 0;
@@ -179,11 +178,32 @@ nav li a:hover {
 }
 
 /* in post */
+.post {
+  padding-bottom: 1vw;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  background-color: #edfaff;
+  text-align: justify;
+  margin-bottom: 1.5vw;
+}
+
+.postContents {
+  margin-top: 1vw;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.postTitle, .postContents {
+  margin: 1vw;
+}
+
 [title="nowActive"].post {
   width: 80vw;
-  height: 98vh;
+  height: 95vh;
   position: absolute;
-  top: 1vw;
+  top: 1vh;
   text-align: justify;
   left: 10vw;
   background-color: white;
@@ -191,19 +211,20 @@ nav li a:hover {
   border-radius: 0.5vw;
   overflow: scroll;
   scroll-behavior: smooth;
+  position: fixed;
 }
 [title="nowActive"].post::-webkit-scrollbar {
   display: none;
 }
-[title="nowActive"] .postThumb {
+.postThumb {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   background-color: gray;
   border-radius: 0.5vw;
   top: 0;
   left: 0;
 }
-[title="nowActive"] .postThumb img {
+.postThumb img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -220,7 +241,8 @@ nav li a:hover {
   margin: auto;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow: visible;
 }
 [title="nowActive"] .postContents p {
   padding: 1vw 0;
@@ -233,6 +255,9 @@ nav li a:hover {
   text-align: center;
   font-size: 12pt;
   font-style: italic;
+}
+[title="nowActive"] .abstract {
+  font-weight: bold;
 }
 
 /*  */
@@ -513,8 +538,6 @@ canvas {
 
 #inSetting div {
   width: 100%;
-  display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   margin: auto;
@@ -522,25 +545,24 @@ canvas {
 }
 
 #inSetting div div {
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
 }
 
 #inSetting input {
-  width: 65%;
-  height: 2vw;
-  border-radius: 0.5vw;
-  padding: 0.25vw;
-  border: 0.1vw solid #111;
+  width: 50%;
+  height: 2.5vw;
+  border-radius: 0.5vw 0 0 0.5vw;
   font-size: 12pt;
+  border: none;
   text-align: center;
 }
 
 #inSetting button {
-  width: 30%;
-  height: 2.5vw;
-  border-radius: 0.5vw;
+  width: 50%;
+  height: 2.6vw;
+  border-radius: 0 0.5vw 0.5vw 0;
   border: none;
   font-size: 14pt;
   font-weight: bold;

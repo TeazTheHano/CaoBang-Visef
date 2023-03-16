@@ -26,22 +26,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const post = document.querySelector('.post');
+const posts = document.querySelectorAll('.post');
 const postNav = document.querySelector('#postNav');
 const postNavExit = document.querySelector('#postNavExit');
 const postNavBackground = document.querySelector('#postNavBackground');
 
-post.addEventListener('click', () => {
-  post.setAttribute('title', 'nowActive');
-  postNav.setAttribute('title', 'nowActive');
+posts.forEach(post => {
+  post.addEventListener('click', () => {
+    posts.forEach(p => {
+      p.removeAttribute('title');
+    });
+    post.setAttribute('title', 'nowActive');
+    postNav.setAttribute('title', 'nowActive');
+  });
 });
 
 postNavExit.addEventListener('click', () => {
-  post.removeAttribute('title');
+  posts.forEach(p => {
+    p.removeAttribute('title');
+  });
   postNav.removeAttribute('title');
 });
 
 postNavBackground.addEventListener('click', () => {
-  post.removeAttribute('title');
+  posts.forEach(p => {
+    p.removeAttribute('title');
+  });
   postNav.removeAttribute('title');
 });
+
+// create an img auto slider
+const imgSlider = document.querySelector('.img-slider');
+const imgSliderItems = document.querySelectorAll('.img-slider-item');
+const imgSliderNext = document.querySelector('.img-slider-next');
+const imgSliderPrev = document.querySelector('.img-slider-prev');
+const imgSliderDots = document.querySelector('.img-slider-dots');
+const imgSliderDotsItems = document.querySelectorAll('.img-slider-dot');
