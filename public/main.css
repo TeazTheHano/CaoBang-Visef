@@ -152,6 +152,7 @@ nav li a:hover {
   border-radius: 0.5vw;
 }
 .loginTab {
+  height: auto;
   width: 28%;
   outline: 2px solid black;
   border-radius: 0.5vw;
@@ -221,20 +222,23 @@ nav li a:hover {
   height: 100%;
   width: 100%;
 }
-[title="low2"] {
+[title="Thấp ở mức nguy hiểm"] {
   background-color: #3c096c;
   border-radius: 4vw 0 0 4vw;
 }
-[title="low1"] {
-  background-color: #3f37c9;
-}
-[title="normal"] {
+[title="Tối ưu"] {
   background-color: #34b257;
 }
-[title="high1"] {
+[title="Bình thường"] {
   background-color: #ffbf00;
 }
-[title="high2"] {
+[title="Cao"] {
+  background-color: #f06969;
+}
+[title="Rất cao"] {
+  background-color: #f53131;
+}
+[title="Cao ở mức rất nguy hiểm"] {
   background-color: #bf0000;
   border-radius: 0 4vw 4vw 0;
 }
