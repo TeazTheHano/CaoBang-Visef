@@ -23,7 +23,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(__dirname+ "/public/login.html");
+  res.sendFile(__dirname + "/public/login.html");
 });
 
 
@@ -54,7 +54,11 @@ app.get("/user/:userid", (req, res) => {
 
 //listen for a connection
 io.on("connection", function (socket) {
-  console.log("a user connected");
+  if (socket.handshake.query.clientType == "web") {
+    console.log("WEB Client connected:" + socket.id);
+  } else {
+    console.log("ESP client connected:" + socket.id);
+  }
 
   //topic name: 'phone1', msg is in this format: '0369677432', parse the msg an take last 9 digits
   socket.on("phone1", function (msg) {
@@ -73,9 +77,13 @@ io.on("connection", function (socket) {
   });
 
   //this is message from esp8266 client
-  socket.on("message", function (msg) {
-    // console.log(msg);
-    socket.broadcast.emit("message", msg);
+  socket.on("message_suckhoe", function (msg) {
+    console.log("received message_suckhoe");
+    socket.broadcast.emit("message_suckhoe", msg);
+  });
+  socket.on("message_huyetap", function (msg) {
+    console.log("received message_huyetap");
+    socket.broadcast.emit("message_huyetap", msg);
   });
 });
 
