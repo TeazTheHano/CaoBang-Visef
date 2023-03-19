@@ -820,15 +820,42 @@
       }
       console.log(data);
 
-      skinTempInfo.innerHTML = data.temp;
-      heartInfo.innerHTML = data.heart;
-      SPO2Info.innerHTML = data.spo2;
-      airTempInfo.innerHTML = data.airTemp;
-      airHumidityInfo.innerHTML = data.airHumid;
-      SO2Info.innerHTML = data.mq2;
-      CO2Info.innerHTML = data.mq135;
-      PM2Info.innerHTML = data.dust;
-      distanceInfo.innerHTML = data.distance;
+      if (data.temp != 0) {
+        setData(tempData.datasets[0].data, data.temp);
+        skinTempInfo.innerHTML = data.temp;
+      }
+      if (data.heart != 0) {
+        setData(heartData.datasets[0].data, data.heart);
+        heartInfo.innerHTML = data.heart;
+      }
+      if (data.spo2 != 0) {
+        setData(SPO2Data.datasets[0].data, data.spo2);
+        SPO2Info.innerHTML = data.spo2;
+      }
+      if (data.airTemp != 0) {
+        setData(airTempHumidityData.datasets[0].data, data.airTemp);
+        airTempInfo.innerHTML = data.airTemp;
+      }
+      if (data.airHumid != 0) {
+        setData(airTempHumidityData.datasets[1].data, data.airHumid);
+        airHumidityInfo.innerHTML = data.airHumid;
+      }
+      if (data.mq2 != 0) {
+
+        setData(SO2Data.datasets[0].data, data.mq2);
+        SO2Info.innerHTML = data.mq2;
+      }
+      if (data.mq135 != 0) {
+        setData(CO2Data.datasets[0].data, data.mq135);
+        CO2Info.innerHTML = data.mq135;
+      }
+      if (data.dust != 0) {
+        setData(PM2.datasets[0].data, data.dust);
+        PM2Info.innerHTML = data.dust;
+      }
+      if (data.distance != 0) {
+        distanceInfo.innerHTML = data.distance;
+      }
 
       //for map
       if (data.lng != null && data.lat != null && data.lng != 0 && data.lat != 0) {
@@ -837,14 +864,6 @@
         updateMarkerPosition(LAT, LNG);
       }
 
-      setData(tempData.datasets[0].data, data.temp);
-      setData(heartData.datasets[0].data, data.heart);
-      setData(SP02.datasets[0].data, data.spo2);
-      setData(airTempHumidityData.datasets[0].data, data.airTemp);
-      setData(airTempHumidityData.datasets[1].data, data.airHumid);
-      setData(SO2Data.datasets[0].data, data.mq2);
-      setData(CO2Data.datasets[0].data, data.mq135);
-      setData(PM2.datasets[0].data, data.dust);
 
       tempChart.update();
       heartChart.update();
@@ -859,12 +878,17 @@
     socket.on("message_huyetap", (data) => {
       console.log(data);
 
-      dropSpeedInfo.innerHTML = data.tocdonhogiot;
-      systolicInfo.innerHTML = data.sys;
-      diastolicInfo.innerHTML = data.dia;
-
-      setData(bloodPressureChart.data.datasets[0].data, data.sys);
-      setData(bloodPressureChart.data.datasets[1].data, data.dia);
+      if (data.tocdonhogiot != 0) {
+        dropSpeedInfo.innerHTML = data.tocdonhogiot;
+      }
+      if (data.sys != 0) {
+        systolicInfo.innerHTML = data.sys;
+        setData(bloodPressureChart.data.datasets[0].data, data.sys);
+      }
+      if (data.dia != 0) {
+        diastolicInfo.innerHTML = data.dia;
+        setData(bloodPressureChart.data.datasets[1].data, data.dia);
+      }
 
       bloodPressureChart.update();
 
