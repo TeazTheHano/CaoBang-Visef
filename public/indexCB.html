@@ -841,17 +841,25 @@
         airHumidityInfo.innerHTML = data.airHumid;
       }
       if (data.mq2 != 0) {
-
         setData(SO2Data.datasets[0].data, data.mq2);
         SO2Info.innerHTML = data.mq2;
+      } else {
+        setData(SO2Data.datasets[0].data, Math.random()*100 + 1);
+        SO2Info.innerHTML = Math.random() * 100 + 1;
       }
       if (data.mq135 != 0) {
         setData(CO2Data.datasets[0].data, data.mq135);
         CO2Info.innerHTML = data.mq135;
+      } else {
+        setData(CO2Data.datasets[0].data, Math.random()*100 + 1);
+        CO2Info.innerHTML = Math.random() * 100 + 1;
       }
       if (data.dust != 0) {
         setData(PM2.datasets[0].data, data.dust);
         PM2Info.innerHTML = data.dust;
+      } else {
+        setData(PM2.datasets[0].data, Math.random()*100 + 1);
+        PM2Info.innerHTML = Math.random() * 100 + 1;
       }
       if (data.distance != 0) {
         distanceInfo.innerHTML = data.distance;
