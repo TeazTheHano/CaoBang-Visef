@@ -1044,7 +1044,7 @@
       ],
     };
     let SP02DataValue =
-      SPO2.datasets[0].data[SP02.datasets[0].data.length - 1];
+      SPO2.datasets[0].data[SPO2.datasets[0].data.length - 1];
 
     var airTempHumidityData = {
       labels: [
@@ -1172,7 +1172,7 @@
 
     var SPO2Chart = new Chart(ctx_SPO2, {
       type: "line",
-      data: SP02,
+      data: SPO2,
       options: SPO2Option,
     });
     var bloodPressureChart = new Chart(ctx_bloodPressure, {
